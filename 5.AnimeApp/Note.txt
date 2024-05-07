@@ -1,0 +1,2 @@
+// Menggunakan {children} untuk menggunakan menghindari props drilling (props didalam props didalam props) / component perantara props
+// Penggunaanya spserti tag HTML

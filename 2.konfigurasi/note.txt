@@ -1,0 +1,2 @@
+untuk instalasi vite menggunakan pnpm
+untuk pnpm harus install dulu menggunakan npm

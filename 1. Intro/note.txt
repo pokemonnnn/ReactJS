@@ -1,0 +1,13 @@
+RULES JSX/BABEL
+
+1. render hanya mengembalikan satu component jika terdapat 3 tag seperti h1, img, p dapat dibungkus dengan <> ... </>
+2. semua tag harus memiliki closing tag seperti (<p>..</p>, <img src="#" />)
+3. untuk penggunaan attribute tag harus ditulis menggunakan camelCase, contoh: meberikan class pada tag => <h1 className = "heading"> Belajar React bareng WPU </h1>
+4. unuk penggunaan component harus ditulis menggunakan PascalCase, contoh: funcion HomePage() { 
+                                                                                //code ;
+                                                                            }
+
+** KONSEP UTAMA PADA REACT **
+1. Component
+2. Props
+3. State

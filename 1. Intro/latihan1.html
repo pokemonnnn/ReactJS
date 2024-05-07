@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Simple</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const container = document.getElementById("root");
+        const root = ReactDOM.createRoot(container);
+
+        function Button({value, click, status}) {
+            return (<button onClick={click} disabled={status} >{ value }</button>)
+        }
+
+        function Counter({value}) {
+            return (<p>{value}</p>);
+        }
+
+        
+        function HomePage(){
+            const [num, setNum] = React.useState(0);
+
+            function plus(){
+                setNum(num + 1);
+            }
+
+            function minus(){
+                setNum(num - 1);
+            }
+
+            function reset(){
+                setNum(0);
+            }
+
+            function btnStatus(numVal){
+                if(numVal < 0 || numVal > 9) {
+                    return true; 
+                }
+            }
+
+            function resetStatus(numVal) {
+                if(numVal < 0 || numVal > 9 ) {
+                    return false;
+                }
+
+                return true;
+            }
+
+            function checkNum(numVal) {
+                if (numVal < 0 || numVal > 9) {
+                    return 'done!';
+                }
+                return numVal
+            }
+
+            return (
+                <>
+                    < Button value="-" click={minus} status={btnStatus(num)}/>
+                    < Counter value={checkNum(num)} />
+                    < Button value="+" click={plus} status={btnStatus(num)}/>
+                    < Button value="Reset" click={reset} status={resetStatus(num)}/>
+                </>
+                )
+        }
+
+        root.render(<HomePage/>)
+    </script>
+</body>
+</html>
